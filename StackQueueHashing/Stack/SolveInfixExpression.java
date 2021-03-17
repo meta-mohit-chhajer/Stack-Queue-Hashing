@@ -128,28 +128,32 @@ public class SolveInfixExpression {
 	 * @return evaluated value as Integer
 	 */
 	private static int evaluate (int number2, int number1, String operator) {
-		if (operator.equalsIgnoreCase("+")) {
-			return number1 + number2;
-		} else if (operator.equalsIgnoreCase("-")) {
-			return number1 - number2;
-		} else if (operator.equalsIgnoreCase("*")) {
-			return number1 * number2;
-		} else if (operator.equalsIgnoreCase("/")) {
-			return number1 / number2;
-		} else if (operator.equalsIgnoreCase(">")) {
-			return number1 > number2 ? 1 : 2;
-		} else if (operator.equalsIgnoreCase("<")) {
-			return number1 < number2 ? 1 : 2;
-		} else if (operator.equalsIgnoreCase("==")) {
-			return number1 == number2 ? 1 : 2;
-		} else if (operator.equalsIgnoreCase("!=")) {
-			return number1 != number2 ? 1 : 2;
-		} else if (operator.equalsIgnoreCase("&&")) {
-			return (number1 != 0 && number2 != 0) ? 1 : 2;
-		} else if (operator.equalsIgnoreCase("||")) {
-			return (number1 != 0 && number2 != 0) ? 1 : 2;
-		}
-		return 0;
+		int val=0;
+		switch(operator)
+		{
+		case "+":val=number1+number2;
+					break;
+		case "-":val=number1-number2;
+				break;
+		case "*":val=number1*number2;
+				break;
+		case "/":val=number1/number2;
+				break;
+		case ">":val=(number1>number2?1:2);
+				break;
+		case "<":val=(number1<number2?1:2);
+				break;
+		case "==":val=(number1==number2?1:2);
+				break;
+		case "!=":val=(number1!=number2?1:2);
+				break;
+		case "&&":val=((number1!=0&&number2!=0)?1:2);
+				  break;
+		case "||":val=((number1!=0||number2!=0)?1:2);
+				  break;
+		default:System.err.println("Invalid Choice");
+		}	
+		return val;
 	}
 	
 	public static void main (String args[]) {
